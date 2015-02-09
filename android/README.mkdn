@@ -1,0 +1,54 @@
+Getting Started 
+---------------
+
+To get started with Android/BlissPop, you'll need to get
+familiar with [Git and Repo](http://source.android.com/source/using-repo.html).
+
+To initialize your local repository using the BlissPop trees, use this command:
+
+
+    repo init -u https://github.com/TeamBliss-LP/android.git -b lp5.0
+
+Then to sync up:
+
+    repo sync (-j4) (-j8) (-j16)- This depends on number of cpu cores- use just "repo sync" if you are unsure.
+
+To build for your device, and use PREBUILT_CHROMIUM Command.
+
+. build/envsetup.sh
+
+breakfast *device name here*
+
+export USE_PREBUILT_CHROMIUM=1
+
+brunch *device name here*
+
+or make is all one line.
+
+. build/envsetup.sh && breakfast *device name here* && export USE_PREBUILT_CHROMIUM=1 && brunch *device name here*
+
+
+For more information on this Github Organization and how it is structured, 
+please [read the wiki article](http://wiki.cyanogenmod.org/w/Github_Organization)
+
+GERRIT PAGE:
+review.blissroms.com:8081
+
+If you would like to contribute to the blissrom project submit patches to:
+ssh://review.blissroms.com:29418. Then head into the project and clone it locally make changes and push back to bliss review.
+
+HOW TO SUBMIT TO OUR GERRIT:
+
+First and foremost, setup your github with out Gerrit.
+
+Clone the repo you would like to commit to from the Gerrit [Project List](http://review.blissroms.com:8081/#/admin/projects/)
+   -Select from the list and copy clone command line.
+
+Make sure you have git review installed
+   - sudo apt-get install git-review
+   
+Make sure you are on the correct branch----lp5.0
+
+Make you change and commit it
+
+Now just type git review, if it does not have the remote yet it will automatically add it and just answer yes to its questions. It will push to the gerrit for you.
